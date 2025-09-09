@@ -1,4 +1,4 @@
-echo 'from airflow.operators.python import PythonVirtualenvOperator
+from airflow.operators.python import PythonVirtualenvOperator
 from datetime import datetime
  
 def my_task():
@@ -17,4 +17,4 @@ with DAG(
         python_callable=my_task,
         requirements=["pycentral"],
         system_site_packages=False,
-    )' > arubavenv.py
+    )
