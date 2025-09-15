@@ -1,7 +1,6 @@
 from airflow.operators.python import PythonVirtualenvOperator
 from datetime import datetime
 from airflow import DAG
-import os
 
 def my_task():
     print(os.environ)
