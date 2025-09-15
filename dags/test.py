@@ -39,7 +39,7 @@ def get_buckets():
         print(f"  - {bucket['Name']}")
         
 with DAG(
-    dag_id='print_env_var_dag',
+    dag_id='get_buckets',
     start_date=datetime(2023, 1, 1),
     schedule=None,
     catchup=False,
