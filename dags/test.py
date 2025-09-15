@@ -10,6 +10,12 @@ import urllib3
 import boto3
 from datetime import datetime
 from os import path
+from airflow.decorators import task
+from airflow.models.param import Param
+from airflow.utils.dates import days_ago
+from airflow.operators.python import get_current_context
+from airflow.providers.cncf.kubernetes.hooks.kubernetes import KubernetesHook
+
 
 def get_token():
     """Fetch auth token from K8s secret."""
