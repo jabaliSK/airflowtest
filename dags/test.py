@@ -43,6 +43,7 @@ def get_buckets():
     response = s3_client.list_buckets()
     for bucket in response['Buckets']:
         print(f"  - {bucket['Name']}")
+        print("jabali")
         
 with DAG(
     dag_id='get_buckets',
