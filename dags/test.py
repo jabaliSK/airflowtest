@@ -1,10 +1,10 @@
 from airflow.operators.python import PythonVirtualenvOperator
 from datetime import datetime
 from airflow import DAG
+import os
 
 def my_task():
-    from pycentral.base import DNACenter  # import inside the task
-    print("pycentral imported successfully")
+    print(os.environ)
  
 with DAG(
     dag_id="test_pycentral",
@@ -16,6 +16,5 @@ with DAG(
     task = PythonVirtualenvOperator(
         task_id="use_pycentral",
         python_callable=my_task,
-        requirements=["pycentral"],
         system_site_packages=False,
     )
