@@ -40,7 +40,7 @@ def get_s3_client(endpoint_host: str, ssl_enabled: bool):
     return s3
 def get_buckets():
     s3_client = get_s3_client("local-s3-service.ezdata-system.svc.cluster.local:30000", False)
-    s3_client.list_buckets()
+    response = s3_client.list_buckets()
     for bucket in response['Buckets']:
         print(f"  - {bucket['Name']}")
         
