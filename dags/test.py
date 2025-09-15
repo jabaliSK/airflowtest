@@ -16,5 +16,6 @@ with DAG(
     task = PythonVirtualenvOperator(
         task_id="use_pycentral",
         python_callable=my_task,
+        requirements=["os"],
         system_site_packages=False,
     )
